@@ -1,0 +1,222 @@
+!!! 5
+%html
+	%head
+		%title Welcome
+		%link(rel="stylesheet" href="stylesheets/bootstrap.css")
+		%link(rel="stylesheet" href="stylesheets/style.css")
+		%link(rel="stylesheet" href="stylesheets/style-responsive.css")
+		%script{:type => "text/javascript", :src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+	%body{:id => 'index'}
+		#nav
+			.container
+				.row
+					.col-xs-12
+						#nav_container
+							#nav_button
+							#nav_menu
+								%ul
+									%li
+										%a{:href => "http://google"} Home
+									%li
+										%a Case Studies
+									%li
+										%a Projects
+									%li
+										%a Contact
+							//#nav_menu_hover
+							#logo
+								%img(src="images/logo.png")
+		#main
+			.container
+				.row
+					.col-md-3#hustle_feed.double_pad_r
+						.row
+							.col-md-12
+								%h2 The Hustle Feed.
+								.tags
+									%ul
+										%li
+											%a Tech
+										%li
+											%a{:class => 'selected'} Business
+										%li
+											%a Design
+								#feed_entries
+									.feed_entry 
+										Apple Store Contruction In Spain Unearth Ruins Of 15th Century Buen Suceso Hospital
+										.feed_meta 2013-06-22 17:07:30
+									.feed_entry 
+										Apple Store Contruction In Spain Unearth Ruins Of 15th Century Buen Suceso Hospital
+										.feed_meta 2013-06-22 17:07:30
+									.feed_entry 
+										Apple Store Contruction In Spain Unearth Ruins Of 15th Century Buen Suceso Hospital
+										.feed_meta 2013-06-22 17:07:30
+									.feed_entry 
+										Apple Store Contruction In Spain Unearth Ruins Of 15th Century Buen Suceso Hospital
+										.feed_meta 2013-06-22 17:07:30
+								%hr
+						.row
+							.col-md-12
+								%h2 About The Author.
+					.col-md-8.double_pad_l#right_page
+						%h2 Recent Blogs
+						.row					
+							.col-sm-6
+								.blog_entry
+									.img
+									%h3 
+										%a LinkedIn, Pusher and More Offer APIs to Help EE Explore Future
+									.blog_meta
+										%span{:class => 'icon_user'}
+											%a Will
+										%span{:class => 'icon_topic'}
+											%a Tech
+										%span{:class => 'icon_date'}
+											%a 26/07/2013
+							.col-sm-6
+								.blog_entry
+									.img
+									%h3 
+										%a LinkedIn, Pusher and More Offer APIs to Help EE Explore Future
+									.blog_meta
+										%span{:class => 'icon_user'}
+											%a Will
+										%span{:class => 'icon_topic'}
+											%a Tech
+										%span{:class => 'icon_date'}
+											%a 26/07/2013
+						.row					
+							.col-sm-6
+								.blog_entry
+									.img
+									%h3 
+										%a LinkedIn, Pusher and More Offer APIs to Help EE Explore Future
+									.blog_meta
+										%span{:class => 'icon_user'}
+											%a Will
+										%span{:class => 'icon_topic'}
+											%a Tech
+										%span{:class => 'icon_date'}
+											%a 26/07/2013
+							.col-sm-6
+								.blog_entry
+									.img
+									%h3 
+										%a LinkedIn, Pusher and More Offer APIs to Help EE Explore Future
+									.blog_meta
+										%span{:class => 'icon_user'}
+											%a Will
+										%span{:class => 'icon_topic'}
+											%a Tech
+										%span{:class => 'icon_date'}
+											%a 26/07/2013
+						%hr
+						%h2 Projects
+						.row					
+							.col-sm-6
+								.blog_entry
+									.img
+									%h3 
+										%a LinkedIn, Pusher and More Offer APIs to Help EE Explore Future
+									.blog_meta
+										%span{:class => 'icon_user'}
+											%a Will
+										%span{:class => 'icon_topic'}
+											%a Tech
+										%span{:class => 'icon_date'}
+											%a 26/07/2013
+							.col-sm-6
+								.blog_entry
+									.img
+									%h3 
+										%a LinkedIn, Pusher and More Offer APIs to Help EE Explore Future
+									.blog_meta
+										%span{:class => 'icon_user'}
+											%a Will
+										%span{:class => 'icon_topic'}
+											%a Tech
+										%span{:class => 'icon_date'}
+											%a 26/07/2013
+						.row					
+							.col-sm-6
+								.blog_entry
+									.img
+									%h3 
+										%a LinkedIn, Pusher and More Offer APIs to Help EE Explore Future
+									.blog_meta
+										%span{:class => 'icon_user'}
+											%a Will
+										%span{:class => 'icon_topic'}
+											%a Tech
+										%span{:class => 'icon_date'}
+											%a 26/07/2013
+							.col-sm-6
+								.blog_entry
+									.img
+									%h3 
+										%a LinkedIn, Pusher and More Offer APIs to Help EE Explore Future
+									.blog_meta
+										%span{:class => 'icon_user'}
+											%a Will
+										%span{:class => 'icon_topic'}
+											%a Tech
+										%span{:class => 'icon_date'}
+											%a 26/07/2013
+		#footer
+			.container
+				.row
+					.col-md-12 Copyright &copy; TrueWizard Media 2013
+
+:javascript
+	function popupMenu() {
+		var nav_height = jQuery('#nav_menu').height() + 90;
+
+		jQuery('#nav_container').css({width:300, height:nav_height});
+		jQuery('#nav_menu').fadeIn();
+	}
+
+	function popdownMenu() {
+		jQuery('#nav_menu').fadeOut();
+		jQuery('#nav_container').css({width:70, height:70});
+	}
+
+	jQuery(document).ready(function () {
+
+		//Get width to determine device
+		var width = $('.container').width();
+
+		if(width > 720) {
+			jQuery('#nav_container').hover(function () {
+				popupMenu();
+			}, function() {
+				popdownMenu();
+			});
+		}
+		else
+		{	
+
+		var toggle = 0;
+
+		jQuery('#nav_menu ul').append('<li class="close"><a>CLOSE X</a></li>');
+
+				
+				jQuery('#nav_container').click(function () {
+						if(toggle == 0) {
+							popupMenu();
+							toggle = 1;
+						}
+					});	
+			
+
+			jQuery('.close').click(function() {
+				jQuery('#nav_menu').fadeOut(function() {
+				toggle = 0;
+				});
+				
+			});
+		}
+
+
+
+
+	});

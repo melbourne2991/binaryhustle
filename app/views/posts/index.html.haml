@@ -1,0 +1,77 @@
+/ %html
+/ 	%head
+/ 		%title Welcome
+/ 		%link(rel="stylesheet" href="/stylesheets/bootstrap.css")
+/ 		%link(rel="stylesheet" href="/stylesheets/style.css")
+/ 		%link(rel="stylesheet" href="/stylesheets/style-responsive.css")
+/ 		%script{:type => "text/javascript", :src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+%h2 Recent Blogs
+- @posts.each_slice(2) do |slice|
+	.row
+		- slice.each do |post|					
+			.col-sm-6
+				.blog_entry
+					.img
+					%h3 
+						%a= link_to post.title, {:controller => "posts", :action => "show", :id => post.id }
+					.blog_meta
+						%span{:class => 'icon_user'}
+							%a= post.user.username
+						%span{:class => 'icon_topic'}
+							%a= post.category
+						%span{:class => 'icon_date'}
+							%a= post.created_at.strftime("%d/%m/%Y")
+%hr
+%h2 Projects
+.row					
+	.col-sm-6
+		.blog_entry
+			.img
+			%h3 
+				%a LinkedIn, Pusher and More Offer APIs to Help EE Explore Future
+			.blog_meta
+				%span{:class => 'icon_user'}
+					%a Will
+				%span{:class => 'icon_topic'}
+					%a Tech
+				%span{:class => 'icon_date'}
+					%a 26/07/2013
+	.col-sm-6
+		.blog_entry
+			.img
+			%h3 
+				%a LinkedIn, Pusher and More Offer APIs to Help EE Explore Future
+			.blog_meta
+				%span{:class => 'icon_user'}
+					%a Will
+				%span{:class => 'icon_topic'}
+					%a Tech
+				%span{:class => 'icon_date'}
+					%a 26/07/2013
+.row					
+	.col-sm-6
+		.blog_entry
+			.img
+			%h3 
+				%a LinkedIn, Pusher and More Offer APIs to Help EE Explore Future
+			.blog_meta
+				%span{:class => 'icon_user'}
+					%a Will
+				%span{:class => 'icon_topic'}
+					%a Tech
+				%span{:class => 'icon_date'}
+					%a 26/07/2013
+	.col-sm-6
+		.blog_entry
+			.img
+			%h3 
+				%a LinkedIn, Pusher and More Offer APIs to Help EE Explore Future
+			.blog_meta
+				%span{:class => 'icon_user'}
+					%a Will
+				%span{:class => 'icon_topic'}
+					%a Tech
+				%span{:class => 'icon_date'}
+					%a 26/07/2013
+
+

@@ -1,0 +1,122 @@
+!!! 5
+%html
+	%head
+		%title Welcome
+		%link(rel="stylesheet" href="stylesheets/bootstrap.css")
+		%link(rel="stylesheet" href="stylesheets/style.css")
+		%link(rel="stylesheet" href="stylesheets/style-responsive.css")
+	%body{:id => 'entry'}
+		#nav
+			.container
+				.row
+					.col-xs-12
+						#nav_button
+						#logo
+							%img(src="images/logo.png")
+		#main
+			.container
+				.row
+					.col-md-3#hustle_feed.double_pad_r
+						.row
+							.col-md-12
+								%h2 The Hustle Feed.
+								.tags
+									%ul
+										%li
+											%a Tech
+										%li
+											%a{:class => 'selected'} Business
+										%li
+											%a Design
+								#feed_entries
+									.feed_entry 
+										Apple Store Contruction In Spain Unearth Ruins Of 15th Century Buen Suceso Hospital
+										.feed_meta 2013-06-22 17:07:30
+									.feed_entry 
+										Apple Store Contruction In Spain Unearth Ruins Of 15th Century Buen Suceso Hospital
+										.feed_meta 2013-06-22 17:07:30
+									.feed_entry 
+										Apple Store Contruction In Spain Unearth Ruins Of 15th Century Buen Suceso Hospital
+										.feed_meta 2013-06-22 17:07:30
+									.feed_entry 
+										Apple Store Contruction In Spain Unearth Ruins Of 15th Century Buen Suceso Hospital
+										.feed_meta 2013-06-22 17:07:30
+								%hr
+						.row
+							.col-md-12
+								%h2 About The Author.
+					.col-md-8.double_pad_l#right_page
+						%h2 LinkedIn, Pusher and More Offer APIs to Help EE Explore Future
+						.row					
+							.col-sm-12
+								.blog_meta
+									%span{:class => 'icon_user'}
+										%a Will
+									%span{:class => 'icon_topic'}
+										%a Tech
+									%span{:class => 'icon_date'}
+										%a 26/07/2013
+								#text_body
+									%p
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus adipiscing purus et mi aliquet malesuada. Curabitur porttitor varius turpis eget sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dapibus consectetur tortor, nec aliquet lacus tempus vitae. Sed felis massa, dapibus in arcu sit amet, rhoncus condimentum eros. Etiam rutrum lectus in malesuada aliquam. Mauris vitae diam vel felis accumsan vulputate vel nec tortor. Nunc pretium hendrerit est, ut cursus ipsum commodo sit amet.
+									%p
+										Aliquam adipiscing viverra tortor. Integer egestas leo nisi, non hendrerit magna accumsan eu. Mauris dui magna, vehicula eu vulputate vel, aliquam nec tortor. Sed ultrices rhoncus sem, eu aliquet magna ornare in. Nulla imperdiet erat a magna condimentum suscipit. Vivamus tempus nisi ut velit gravida tristique a nec nulla. Donec faucibus bibendum neque, in malesuada lorem mattis vitae. Nullam commodo turpis a felis aliquam dictum. Sed tempus libero vitae dolor sagittis, vestibulum hendrerit est volutpat. In quis urna adipiscing, consequat elit vitae, commodo elit. Etiam malesuada mauris ornare orci lobortis pellentesque. Praesent non libero dui. Sed dapibus mauris ut magna feugiat, id tincidunt mauris vulputate.
+									%p
+										Phasellus porta aliquam nibh, sit amet sollicitudin nibh interdum non. Proin id accumsan mi, eget tincidunt sapien. Praesent vulputate quam sed ipsum congue, sit amet vulputate metus feugiat. Nam velit tellus, egestas id dui a, convallis gravida dolor.Suspendisse vulputate metus massa, eu placerat elit pellentesque sed. Nunc non lorem vel eros lobortis egestas. Phasellus vehicula vestibulum pulvinar. Quisque vitae libero metus. Sed ac tellus eu libero sollicitudin ultrices eget ac nibh.
+								%hr
+								%h2 Comments
+								#comments
+									.comment
+										.profile
+											%img{:src => "images/profile_image_sample.jpg"}
+										.message
+											.username Will Leach
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus adipiscing purus et mi aliquet malesuada. Curabitur porttitor varius turpis eget sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dapibus consectetur tortor, nec aliquet lacus tempus vitae. Sed felis massa, dapibus in arcu sit amet, rhoncus condimentum eros. Etiam rutrum lectus in malesuada aliquam. Mauris vitae diam vel felis accumsan vulputate vel nec tortor. Nunc pretium hendrerit est, ut cursus ipsum commodo sit amet.
+											.reply-link
+												%a{:href => "#"} Reply to Comment
+									.comment
+										.profile
+											%img{:src => "images/profile_image_sample.jpg"}
+										.message
+											.username Will Leach
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus adipiscing purus et mi aliquet malesuada. Curabitur porttitor varius turpis eget sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dapibus consectetur tortor, nec aliquet lacus tempus vitae. Sed felis massa, dapibus in arcu sit amet, rhoncus condimentum eros. Etiam rutrum lectus in malesuada aliquam. Mauris vitae diam vel felis accumsan vulputate vel nec tortor. Nunc pretium hendrerit est, ut cursus ipsum commodo sit amet.
+											.reply-link
+												%a{:href => "#"} Reply to Comment
+									.comment.c1
+										.profile
+											%img{:src => "images/profile_image_sample.jpg"}
+										.message
+											.username Will Leach
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus adipiscing purus et mi aliquet malesuada. Curabitur porttitor varius turpis eget sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dapibus consectetur tortor, nec aliquet lacus tempus vitae. Sed felis massa, dapibus in arcu sit amet, rhoncus condimentum eros. Etiam rutrum lectus in malesuada aliquam. Mauris vitae diam vel felis accumsan vulputate vel nec tortor. Nunc pretium hendrerit est, ut cursus ipsum commodo sit amet.
+											.reply-link
+												%a{:href => "#"} Reply to Comment
+									.comment.c2
+										.profile
+											%img{:src => "images/profile_image_sample.jpg"}
+										.message
+											.username Will Leach
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus adipiscing purus et mi aliquet malesuada. Curabitur porttitor varius turpis eget sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dapibus consectetur tortor, nec aliquet lacus tempus vitae. Sed felis massa, dapibus in arcu sit amet, rhoncus condimentum eros. Etiam rutrum lectus in malesuada aliquam. Mauris vitae diam vel felis accumsan vulputate vel nec tortor. Nunc pretium hendrerit est, ut cursus ipsum commodo sit amet.
+											.reply-link
+												%a{:href => "#"} Reply to Comment
+								%hr
+								#submit-comment
+									%h2 Post a Reply...
+									%form{:role => "form"}
+										.form-group
+											%label{:for => "exampleInputName1"} Name
+											%input#InputEmail1.form-control{:placeholder => "Enter Name", :type => "name"}
+										.form-group
+											%label{:for => "exampleInputEmail1"} Email
+											%input#InputPassword1.form-control{:placeholder => "Enter Email", :type => "email"}
+										.form-group
+											%label{:for => "exampleInputName1"} Comment:
+											%textarea#TextAreaComment1.form-control{:placeholder => "Enter Name"}
+										.checkbox
+											%label
+												%input{:type => "checkbox"}
+												Click to Subscribe to Newsletter
+										%button.btn.btn-default{:type => "submit"} Submit
+		#footer
+			.container
+				.row
+					.col-md-12 Copyright &copy; TrueWizard Media 2013

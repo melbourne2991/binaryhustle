@@ -1,0 +1,64 @@
+!!! 5
+%html
+	%head
+		%title Welcome
+		%script{:type => "text/javascript", :src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+		= stylesheet_link_tag    "bootstrap.min", "style", "style-responsive", media: "all", "data-turbolinks-track" => true
+%body{:id => controller.action_name}
+	#nav
+		.container
+			.row
+				.col-xs-12
+					#nav_container
+						#nav_button
+						#nav_menu
+							%ul
+								%li
+									%a{:href => "http://google"} Home
+								%li
+									%a Case Studies
+								%li
+									%a Projects
+								%li
+									%a Contact
+						#logo
+							%img(src="/assets/logo.png")
+	#main
+		.container
+			.row
+				.col-md-3#hustle_feed.double_pad_r
+					.row
+						.col-md-12
+							%h2 The Hustle Feed.
+							.tags
+								%ul
+									%li
+										%a Tech
+									%li
+										%a{:class => 'selected'} Business
+									%li
+										%a Design
+							#feed_entries
+								.feed_entry 
+									Apple Store Contruction In Spain Unearth Ruins Of 15th Century Buen Suceso Hospital
+									.feed_meta 2013-06-22 17:07:30
+								.feed_entry 
+									Apple Store Contruction In Spain Unearth Ruins Of 15th Century Buen Suceso Hospital
+									.feed_meta 2013-06-22 17:07:30
+								.feed_entry 
+									Apple Store Contruction In Spain Unearth Ruins Of 15th Century Buen Suceso Hospital
+									.feed_meta 2013-06-22 17:07:30
+								.feed_entry 
+									Apple Store Contruction In Spain Unearth Ruins Of 15th Century Buen Suceso Hospital
+									.feed_meta 2013-06-22 17:07:30
+							%hr
+					.row
+						.col-md-12
+							%h2 About The Author.
+				.col-md-8.double_pad_l#right_page
+					=yield
+	#footer
+		.container
+			.row
+				.col-md-12 Copyright &copy; TrueWizard Media 2013
+	%script{:type => "text/javascript", :src => "/assets/menu.js"}

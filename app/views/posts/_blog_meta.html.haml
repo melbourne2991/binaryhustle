@@ -1,0 +1,7 @@
+.blog_meta
+	%span{:class => 'icon_user'}
+		%a= post.user.username
+	%span{:class => 'icon_topic'}
+		%a= post.category
+	%span{:class => 'icon_date'}
+		%a= post.created_at.strftime("%d/%m/%Y")

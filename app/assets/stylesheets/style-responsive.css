@@ -1,0 +1,126 @@
+@media (min-width: 1400px) {
+	#hustle_feed .tags {
+	    padding-bottom: 40px;
+	}
+
+	#logo {
+		left:439px;
+	}
+}
+
+@media (max-width: 1399px) {
+	#hustle_feed .tags li {
+	    margin-bottom: 20px;
+	}
+
+	#hustle_feed .tags {
+	    padding-bottom: 20px;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1399px) {
+	#logo {
+		left:  348px;
+	}
+}
+
+@media (min-width: 992px) {
+	.double_pad_l {
+		margin-left:40px; 
+	}
+
+	.double_pad_r {
+	    margin-right:40px;  
+	}
+
+	#hustle_feed .tags {
+    	float: left;
+    }
+
+    #hustle_feed .tags ul li {
+    	float:left;
+	}
+
+
+}
+
+@media (max-width: 992px) {
+	h1,h2 {
+		text-align: center;
+	}
+
+	#hustle_feed .tags {
+    	text-align: center;
+	}
+
+
+	#hustle_feed .tags {
+		text-align: center;
+	}
+
+	#hustle_feed .tags ul li {
+		display: inline-block;
+	}
+
+	#feed_entries {
+		width:80%;
+		margin: auto;
+	}
+
+	#logo {
+		margin-left:  auto;
+		margin-right: auto;
+		right:50%;
+
+	}
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+	#logo {
+		margin-right: -175.5px;
+	}
+}
+
+@media (min-width: 768px) {
+	#logo {
+		width:351px;
+		top:12px;
+	}
+
+	.blog_entry {
+		height:260px;
+		margin-bottom: 40px;	
+	}
+
+	.blog_entry h3 {
+		height:52px;
+	}
+
+	#recent_blogs .row {
+	    margin-bottom: 40px;
+	}
+}
+
+@media (max-width: 767px) {
+	.blog_entry {
+		margin: 0 auto;
+		width:250px;
+		margin-bottom: 40px;
+	}
+}
+
+@media (max-width: 767px) and (min-width: 416px) {
+	#logo {
+		width:200px;
+		margin-right: -100px;
+		top:18px;
+	}
+}
+
+@media (max-width: 415px) {
+	#logo {
+		width:200px;
+		margin-right: -129px;
+		top:18px;
+	}
+}

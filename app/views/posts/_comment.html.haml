@@ -1,0 +1,12 @@
+.comment{:class => "c" + nesting.to_s}
+	.profile
+		%img{:src => "/assets/profile_image_sample.jpg"}
+	.message
+		.username= comment.user.username
+		= comment.content
+		.reply-link
+			%a{:href => "#"} Reply to Comment
+- if comment.replies.count > 0
+	- nesting = nesting + 1
+	- comment.replies.each do |comment|
+		= render "comment", :comment => comment, :nesting => nesting
