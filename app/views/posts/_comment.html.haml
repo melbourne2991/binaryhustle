@@ -2,10 +2,18 @@
 	.profile
 		%img{:src => "/assets/profile_image_sample.jpg"}
 	.message
-		.username= comment.user.username
+		.username
+			- if comment.user.username.blank?
+				= comment.user.first_name
+			- else
+				= comment.user.username	
 		= comment.content
 		.reply-link
-			%a{:href => "#"} Reply to Comment
+			= link_to "Reply to comment...", post_path(:original_id => comment.id)
+			= @original_id.to_s + "and" + comment.id.to_s
+- if @original_id.to_s == comment.id.to_s
+	.comment{:class => "c" + nesting.to_s}
+		= render "submit_comment", :nesting => nesting
 - if comment.replies.count > 0
 	- nesting = nesting + 1
 	- comment.replies.each do |comment|

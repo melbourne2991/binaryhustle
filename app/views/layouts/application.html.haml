@@ -21,10 +21,23 @@
 									%a Projects
 								%li
 									%a Contact
-						#logo
-							%img(src="/assets/logo.png")
+					#logo
+						%img(src="/assets/logo.png")
 	#main
 		.container
+			- if request.fullpath != '/'
+				.row
+					.col-md-12
+						#breadcrumbs
+							= link_to 'home', '/'
+							%span  »
+							- @BreadcrumbsHelper = breadcrumbs
+							- i = 0
+							- @BreadcrumbsHelper.each do |name, breadcrumb| 
+								= link_to name, breadcrumb
+								- if i != (@BreadcrumbsHelper.count - 1) 
+									%span  »
+								- i = i + 1			
 			.row
 				.col-md-3#hustle_feed.double_pad_r
 					.row

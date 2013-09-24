@@ -9,33 +9,9 @@
 			%h2 Comments
 			#comments
 				- @post.comments.where(:original_id => nil).each do |comment| 
-					.comment
-						.profile
-							%img{:src => "/assets/profile_image_sample.jpg"}
-						.message
-							.username= comment.user.username
-							= comment.content
-							.reply-link
-								%a{:href => "#"} Reply to Comment
-					- if comment.replies.count > 0
-						- nesting = 0
-						- comment.replies.each do |comment|
-							=render "comment", :comment => comment, :nesting => nesting
+					- nesting = 0
+					= render "comment", :nesting => nesting, :comment => comment
 			%hr
 		#submit-comment
 			%h2 Post a Reply...
-			%form{:role => "form"}
-				.form-group
-					%label{:for => "exampleInputName1"} Name
-					%input#InputEmail1.form-control{:placeholder => "Enter Name", :type => "name"}
-				.form-group
-					%label{:for => "exampleInputEmail1"} Email
-					%input#InputPassword1.form-control{:placeholder => "Enter Email", :type => "email"}
-				.form-group
-					%label{:for => "exampleInputName1"} Comment:
-					%textarea#TextAreaComment1.form-control{:placeholder => "Enter Name"}
-				.checkbox
-					%label
-						%input{:type => "checkbox"}
-						Click to Subscribe to Newsletter
-				%button.btn.btn-default{:type => "submit"} Submit
+			= render "submit_comment"

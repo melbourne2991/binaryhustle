@@ -1,0 +1,19 @@
+= form_for(@comment, :url => post_comments_path(@post.id)) do |f|
+	- if session[:user_id] == nil
+		= fields_for(@user) do |u| 
+			.form-group
+				= u.label :name
+				= u.text_field :first_name, class: "form-control"
+			.form-group
+				= u.label :email
+				= u.text_field :email, class: "form-control"
+	= fields_for(@comment) do |c|
+		.form-group
+			= c.label :content
+			= c.text_area :content, class: "form-control"
+			= c.hidden_field :original_id, :value => @original_id
+			.checkbox
+			%label
+				%input{:type => "checkbox"}
+				Click to Subscribe to Newsletter
+	= f.submit

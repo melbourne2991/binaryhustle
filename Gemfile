@@ -29,6 +29,10 @@ gem 'jbuilder', '~> 1.2'
 
 gem "haml"
 
+gem "debugger"
+
+gem "friendly_id", "~> 5.0.0.rc1"
+
 gem 'bcrypt-ruby', :require => 'bcrypt' 
 
 group :doc do

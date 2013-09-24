@@ -42,6 +42,10 @@
 	}
 
 
+	#submit_comment .form-control {
+		width:300px;
+	}
+
 }
 
 @media (max-width: 992px) {
@@ -79,6 +83,10 @@
 	#logo {
 		margin-right: -175.5px;
 	}
+
+	.form-control {
+		width:80%;
+	}
 }
 
 @media (min-width: 768px) {
@@ -99,6 +107,10 @@
 	#recent_blogs .row {
 	    margin-bottom: 40px;
 	}
+
+
+
+
 }
 
 @media (max-width: 767px) {
@@ -106,6 +118,11 @@
 		margin: 0 auto;
 		width:250px;
 		margin-bottom: 40px;
+	}
+
+	form {
+		width:80%;
+		margin:0 auto;
 	}
 }
 

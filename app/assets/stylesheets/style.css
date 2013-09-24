@@ -25,7 +25,7 @@
 
 body {
 	background:url(/assets/bg.jpg);
-    font-family: arial;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 
 }
 
@@ -56,6 +56,13 @@ hr{
 a {
     cursor: pointer;
 }
+
+label {
+    margin-bottom: 10px;
+    color:#808080;
+    font-size:20px;
+    font-weight: lighter;
+}
 /*      Header      */
 
 #nav {
@@ -63,6 +70,11 @@ a {
 	width:100%;
 	background:url(/assets/black_lozenge_pattern.jpg) repeat;
     position: relative;
+}
+
+#nav_container {
+    width:70px;
+    height:70px;
 }
 
 #nav_button {
@@ -196,7 +208,7 @@ a {
     text-align: center;
     text-transform: uppercase;
     padding:7px;
-    background: #818586; /*ffe006*/
+    background: #585858; /*ffe006*/
     color:#fff;
 }
 
@@ -291,22 +303,22 @@ a {
     float: right;
 }
 
-.c0 {
+.c1 {
     margin-left:10%;
     width:90%;
 }
 
-.c1 {
+.c2 {
     margin-left:20%;
     width:80%;
 }
 
-.c2 {
+.c3 {
     margin-left:30%;
     width:70%;
 }
 
-.c3 {
+.c4 {
     margin-left:40%;
     width:60%;
 }
@@ -318,4 +330,13 @@ a {
 
 #submit-comment {
     clear:both;
+    height:700px;
+}
+
+#breadcrumbs {
+    margin-top: 20px;
+}
+
+#breadcrumbs a, #breadcrumbs span {
+color: #585858;
 }

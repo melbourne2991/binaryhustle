@@ -1,10 +1,17 @@
 Binaryhustle::Application.routes.draw do
   root 'posts#index'
-  resources :posts, only: [:index, :show]
-  resources :users
+
+  resources :posts, only: [:index, :show] do
+    resources :comments, shallow: true
+  end
+
+  resources :users, only: [:create]
+
+  #User Routes
+  get "/signup", to: "users#new"
 
   #login Routes
-  get "/sessions/login", to: "sessions#login"
+  get "/login", to: "sessions#login"
   post "/sessions/login_attempt", to: "sessions#login_attempt"
 
   get "/sessions/home", to: "sessions#home"

@@ -13,7 +13,7 @@
 				.blog_entry
 					.img
 					%h3 
-						%a= link_to post.title, {:controller => "posts", :action => "show", :id => post.id }
+						%a= link_to post.title, posts_path + '/' + post.slug
 					.blog_meta
 						%span{:class => 'icon_user'}
 							%a= post.user.username
