@@ -1,0 +1,5 @@
+= form_for(@comment, :url => post_comments_path(@post.id)) do |f|
+	.form-group
+		= f.text_area :content, class: "form-control"
+		= f.hidden_field :original_id, :value => @original_id
+	= f.submit

@@ -1,0 +1,16 @@
+- if @meta
+	%h2= @meta_title
+	- if @posts.count > 0   
+		- @posts.each_slice(2) do |slice|
+			.row
+				- slice.each do |post|					
+					.col-sm-6
+						.blog_entry
+							.img
+							%h3 
+								%a= link_to post.title, posts_path + '/' + post.id.to_s
+							= render "blog_meta", :post => post
+	- else
+		%p= @user.username + " has no posts."
+- else
+	%h2= "User does not exist."

@@ -27,11 +27,14 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+#haml
 gem "haml"
 
-gem "debugger"
+#breadcrumbs
+gem "crummy", "~> 1.7.2"
 
-gem "friendly_id", "~> 5.0.0.rc1"
+#SEO URLs
+gem 'friendly_id', '~> 5.0.0'
 
 gem 'bcrypt-ruby', :require => 'bcrypt' 
 

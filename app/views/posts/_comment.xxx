@@ -1,0 +1,22 @@
+.comment{:class => "c" + nesting.to_s}
+	.profile
+		%img{:src => "/assets/profile_image_sample.jpg"}
+	.message
+		.username
+			- if defined? comment.user.username
+				- if comment.user.username.blank?
+					= comment.user.first_name
+				- else
+					= comment.user.username
+			- else
+				= comment.user.first_name
+		= comment.content
+		.reply-link
+			= link_to "Reply to comment...", post_path(:original_id => comment.id)
+- if @original_id.to_s == comment.id.to_s
+	.comment{:class => "c" + nesting.to_s + " reply"}
+		= render "submit_comment", :nesting => nesting
+- if comment.replies.count > 0
+	- nesting = nesting + 1
+	- comment.replies.each do |comment|
+		= render "comment", :comment => comment, :nesting => nesting

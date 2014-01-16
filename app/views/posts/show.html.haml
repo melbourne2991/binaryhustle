@@ -5,13 +5,4 @@
 		#text_body
 			= @post.content
 		%hr
-		- if @post.comments.count > 0
-			%h2 Comments
-			#comments
-				- @post.comments.where(:original_id => nil).each do |comment| 
-					- nesting = 0
-					= render "comment", :nesting => nesting, :comment => comment
-			%hr
-		#submit-comment
-			%h2 Post a Reply...
-			= render "submit_comment"
+		= render "comment", :disqus_id => @disqus_id, :post => @post

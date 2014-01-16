@@ -1,25 +1,35 @@
 Binaryhustle::Application.routes.draw do
+  #root
   root 'posts#index'
 
-  resources :posts, only: [:index, :show] do
-    resources :comments, shallow: true
-  end
-
+  #resources
+  resources :posts, except: [:show, :update, :destroy]
   resources :users, only: [:create]
+
+  #Posts
+  get "/meta", to: "posts#meta"
+  get "/posts/:year/:month/:day/:slug", to: "posts#show", as: :post, via: [:get]
 
   #User Routes
   get "/signup", to: "users#new"
+  get "/success", to: "users#index"
 
   #login Routes
   get "/login", to: "sessions#login"
   post "/sessions/login_attempt", to: "sessions#login_attempt"
 
+  #session routes
   get "/sessions/home", to: "sessions#home"
   get "/sessions/logout", to: "sessions#logout"
 
-  namespace :admin do
-    resources :posts
+  #admin routes
+  #resources :posts, module: 'admin', except: [:show, :index]
+  namespace :admin do 
+    root 'posts#new'
+    resources :posts, except: [:show, :index]
   end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

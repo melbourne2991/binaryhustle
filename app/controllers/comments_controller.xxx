@@ -1,0 +1,27 @@
+class CommentsController < ApplicationController
+	def create
+		@post = Post.find(params[:post_id])
+
+		respond_to do |format|
+	      	if session[:user_id] != nil
+	      		@comment = Comment.new(comment_params)
+	      		@comment.post_id = params[:post_id]
+	      		@comment.user_id = session[:user_id]
+
+	      		if @comment.save
+	        		format.html { redirect_to @post, notice: 'Comment was successfully created.' }
+	        	else
+	        		format.html { redirect_to @post, notice: 'Comment was successfully created.' }
+	        	end
+		  	else
+		   	 	format.html { redirect_to signup_path, notice: 'Comment was successfully created.' }
+		  	end
+		end
+
+	end
+
+	private
+	def comment_params
+		params.require(:comment).permit(:content, :post_id, :original_id)
+	end
+end

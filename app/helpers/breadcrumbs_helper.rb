@@ -1,7 +1,9 @@
 module BreadcrumbsHelper
 	def breadcrumbs
 		current_path = request.fullpath
-		path_parts 	 = current_path.split('/')
+		noparam_path = current_path.split('?')
+
+		path_parts 	 = noparam_path[0].split('/')
 
 		path_parts.shift
 

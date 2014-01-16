@@ -4,11 +4,11 @@ class UsersController < ApplicationController
 	end
 
 	def new
-		@user = User.new
+		@user = RegisteredUser.new
 	end
 
 	def create
-		@user = User.new(user_params)
+		@user = RegisteredUser.new(user_params)
 
 		if @user.save
 	      flash[:notice] = "You signed up successfully"

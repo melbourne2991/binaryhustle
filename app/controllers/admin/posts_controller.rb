@@ -1,6 +1,6 @@
 class Admin::PostsController < ApplicationController
-  before_filter :authenticate_admin
-  before_action :set_admin_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
@@ -16,6 +16,7 @@ class Admin::PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+
   end
 
   # GET /posts/1/edit
@@ -25,7 +26,12 @@ class Admin::PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    new_post_params = post_params
+    new_post_params[:category] = new_post_params[:category].downcase 
+    new_post_params[:date] = Date.today.to_s(:db)
+
+    @post = Post.new(new_post_params)
+    @post.user_id = session[:user_id] 
 
     respond_to do |format|
       if @post.save
@@ -70,6 +76,6 @@ class Admin::PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, :category)
     end
 end

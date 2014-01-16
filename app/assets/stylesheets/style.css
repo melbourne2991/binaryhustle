@@ -234,7 +234,7 @@ label {
     font-size: 12px;
 }
 
-#index .blog_meta span a {
+.blog_meta span a {
     color:#ffe006;
 }
 
@@ -258,16 +258,16 @@ label {
     margin-bottom: 40px;
 }
 
-#TextAreaComment1 {
-    height: 200px;
-}
-
 .comment {
     position: relative;
     padding: 20px 0 20px 0;
     margin-top: 20px;
     margin-bottom: 20px;
     border-bottom: 1px #cccccc dashed;
+}
+
+.comment textarea {
+    height:175px;
 }
 
 .comment:first-child {
@@ -333,10 +333,43 @@ label {
     height:700px;
 }
 
+.new_comment textarea {
+    height:175px;
+}
+
 #breadcrumbs {
     margin-top: 20px;
 }
 
 #breadcrumbs a, #breadcrumbs span {
 color: #585858;
+}
+
+input[type="submit"] {
+font-size: 100%;
+padding: .5em 1.5em;
+color: #fff;
+border: 1px solid #999;
+border: 0 rgba(0,0,0,0);
+background-color: #333333;
+text-decoration: none;
+border-radius: 2px;
+-webkit-transition: .1s linear -webkit-box-shadow;
+-moz-transition: .1s linear -moz-box-shadow;
+-ms-transition: .1s linear box-shadow;
+-o-transition: .1s linear box-shadow;
+transition: .1s linear box-shadow;
+}
+
+.comment input[type="submit"] {
+    right: 0;
+    position: absolute;
+}
+
+.comment {
+    position: relative;
+}
+
+.reply {
+    height:265px;
 }

@@ -1,7 +1,7 @@
 .blog_meta
 	%span{:class => 'icon_user'}
-		%a= post.user.username
+		= link_to post.user.username, :action => :meta, :meta_type => "user", :user_id => post.user.id
 	%span{:class => 'icon_topic'}
-		%a= post.category
+		= link_to post.category, :action => :meta, :meta_type => "category", :category => post.category
 	%span{:class => 'icon_date'}
-		%a= post.created_at.strftime("%d/%m/%Y")
+		= link_to post.created_at.strftime("%d/%m/%Y"), :action => :meta, :meta_type => "date", :date => post.created_at
